@@ -11,6 +11,7 @@ while True:
 # digitar algo inválido, exiba uma mensagem de erro.
 
 print('=' * 100)
+print('Questão - 2')
 
 print('Multiplicador de números')
 def checar_numero(prompt):
@@ -32,6 +33,7 @@ print(f'{a} X {b} = {a*b}')
 
 
 print('=' * 100)
+print('Questao - 3')
 
 while True:
     try: 
@@ -46,6 +48,7 @@ while True:
 # Use try e finally para garantir que uma mensagem de "Encerrando programa" seja sempre exibida.
 
 print('=' * 100)
+print('Questão - 4')
 try:
     with open('dados.txt', 'r') as arquivo:
         print(f'Conteúdo do arquivo: {arquivo.read()}')
@@ -81,7 +84,9 @@ print(dividir(a, b))
 
 # 6 Crie uma exceção personalizada chamada IdadeInvalidaError. 
 # Depois, crie uma função cadastrar_idade(idade) que lance essa exceção caso a idade seja negativa.
+print('=' * 100)
 
+print('Questão - 6')
 class IdadeInvalidaError(Exception):
     pass
 
@@ -98,7 +103,7 @@ def validar_idade(idade):
 # ZeroDivisionError se tentar dividir por zero
 
 print('=' * 100)
-
+print('Questão - 7')
 def dividir_com_tratamento_de_erro():
     try:
         num1 = float(input("Digite o primeiro número: "))
@@ -118,6 +123,7 @@ def dividir_com_tratamento_de_erro():
 # finally para exibir "Fim do programa".
 
 print('=' * 100)
+print('Questão - 8')
 
 try:
     numero = int(input("Digite um número inteiro para verificar se é par: "))
@@ -140,6 +146,7 @@ finally:
 
 
 print('=' * 100)
+print('Questão - 9')
 class SaldoInsuficienteError(Exception):
     pass
 
