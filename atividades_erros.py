@@ -74,11 +74,18 @@ while True:
     except ValueError:
         print('ERRO: Digite números.')
 
+
+
 def dividir (a, b):
     if b == 0:
         raise ZeroDivisionError('ERRO: Divisão por zero.')
-    else:
-        return a/b
+    return a/b
+
+try:
+    resultado = dividir(a, b)
+    print(f'O resultado é: {resultado}')
+except ZeroDivisionError as e:
+    print(e)
     
 print(dividir(a, b))
 
@@ -95,6 +102,16 @@ def validar_idade(idade):
         raise IdadeInvalidaError('ERRO: Idade inválida.')
     else:
         return idade
+    
+
+try:
+    idade_digitada = int(input("Digite uma idade: "))
+    idade_validada = validar_idade(idade_digitada)
+    print(f"Idade cadastrada: {idade_validada}")
+except IdadeInvalidaError as e:
+    print(e)
+except ValueError:
+    print("ERRO: Por favor, digite um número inteiro.")
 
 # 7 Peça ao usuário dois números e divida o primeiro pelo segundo. Trate dois tipos de erro:
 
@@ -114,6 +131,9 @@ def dividir_com_tratamento_de_erro():
         print("Erro! Por favor, digite apenas números válidos.")
     except ZeroDivisionError:
         print("Erro! Não é possível dividir por zero.")
+
+
+dividir_com_tratamento_de_erro()
 
 # 8 Crie um programa que peça ao usuário um número inteiro e verifique se ele é par. Use:
 
@@ -147,22 +167,26 @@ finally:
 
 print('=' * 100)
 print('Questão - 9')
+
 class SaldoInsuficienteError(Exception):
     pass
-
 
 def sacar(saldo, valor):
     if saldo < valor:
         raise SaldoInsuficienteError('Saldo insuficiente.')
     
-    return f'R$ {saldo - valor:.2f}'
+    saldo -= valor
+    return saldo
 
 try:
     saldo = float(input('Digite o valor do saldo em conta: '))
     valor = float(input('Digite o valor que deseja sacar: '))
     
-    print(f'Novo saldo: {sacar(saldo, valor)}')
+    novo_saldo = sacar(saldo, valor)
+    print(f'Novo saldo: R$ {novo_saldo:.2f}') 
 except ValueError:
-        print('ERRO: Digite os valores pedidos para realizar a operação.')
+    print('ERRO: Digite os valores pedidos para realizar a operação.')
+except SaldoInsuficienteError as e:
+    print(f'ERRO NA OPERAÇÃO: {e}')
 
 
