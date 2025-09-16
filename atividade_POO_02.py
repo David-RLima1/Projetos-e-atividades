@@ -118,7 +118,7 @@ class Pessoa:
         return self.__identidade
 
     @identidade.setter
-    def identidade(self, nova_identidade: str) -> bool:
+    def identidade(self, nova_identidade: str) -> None:
         
         if len(nova_identidade) == 7:
             self.__identidade = nova_identidade
