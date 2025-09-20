@@ -90,8 +90,8 @@ class Pessoa:
     def __init__(self, nome: str, data_de_nascimento: str, cpf: str, identidade: str):
         self.nome = nome
         self.data_de_nascimento = data_de_nascimento
-        self.cpf = cpf
-        self.identidade = identidade 
+        self.__cpf = cpf
+        self.__identidade = identidade 
 
     def __str__(self) -> str:
         return f"Nome: {self.nome}\nData de Nascimento: {self.data_de_nascimento}\nCPF: {self.cpf}\nIdentidade: {self.identidade}"
