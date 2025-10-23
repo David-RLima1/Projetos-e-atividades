@@ -21,7 +21,7 @@ class Gato(Animal):
         print("Miau!")
 
 
-print("--- 1. Teste de Definição ---")
+print("--- 1. Definição ---")
 meu_cachorro = Cachorro()
 meu_gato = Gato()
 
@@ -35,7 +35,7 @@ meu_gato.falar()
 
 # 2. Proibição de instanciamento
 
-print("\n--- 2. Teste de Proibição de Instanciamento ---")
+print("\n--- 2. Proibição de Instanciamento ---")
 try:
     animal_abstrato = Animal()
     print(animal_abstrato)
@@ -69,7 +69,7 @@ class Retangulo(FormaGeometrica):
     def perimetro(self):
         return 2 * (self.base + self.altura)
 
-print("\n--- 3. Teste de Múltiplos Métodos (Retangulo) ---")
+print("\n--- 3. Múltiplos Métodos (Retangulo) ---")
 meu_retangulo = Retangulo(10, 5)
 
 print(f"Retângulo com Base=10 e Altura=5:")
@@ -90,7 +90,7 @@ class Transporte(ABC):
     def parar(self):
         pass
 
-print("\n--- 4. Teste de Herança Parcial ---")
+print("\n--- 4. Herança Parcial ---")
 
 class CarroParcial(Transporte):
     def mover(self):
@@ -103,16 +103,4 @@ except TypeError as e:
     print(f"Erro gerado: {e}")
 
 
-print("\n--- Correção (Implementação Completa) ---")
-        
-class Carro(Transporte):
-    def mover(self):
-        print("O carro (completo) está andando.")
-        
-    def parar(self):
-        print("O carro (completo) freou e parou.")
 
-meu_carro_corrigido = Carro()
-meu_carro_corrigido.mover()
-meu_carro_corrigido.parar()
-print("Instanciação do Carro (completo) bem-sucedida!")
