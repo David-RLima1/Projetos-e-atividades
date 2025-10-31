@@ -6,6 +6,7 @@
 SELECT *
 FROM Aluno
 
+
 -- Exiba apenas o nome e a nota1 de todos os alunos.
 
 -- (Use SELECT com colunas específicas)
@@ -35,6 +36,7 @@ WHERE data_nascimento > '2000-12-31'
 
 SELECT nome, mensalidade
 FROM Curso
+WHERE mensalidade > 600;
 
 -- Mostre o nome das turmas e o ano correspondente, ordenados pelo ano em ordem crescente.
 
@@ -48,8 +50,9 @@ ORDER BY ano ASC
 
 -- (Use GROUP BY)
 
-SELECT nome
+SELECT ano, COUNT(*) as turmas_por_ano
 FROM Turma
+GROUP BY ano;
 
 
 -- Calcule a média da nota1 dos alunos por turma_id.
@@ -58,12 +61,17 @@ FROM Turma
 
 SELECT id_turma, AVG(nota1) as media
 FROM Aluno
+GROUP BY id_turma
 
 -- Mostre o ano e a quantidade de turmas apenas para os anos que têm mais de 2 turmas.
 
 -- (Use GROUP BY e HAVING)
 
-
+SELECT ano, COUNT(*) as turmas
+FROM Turma
+GROUP BY ano
+HAVING COUNT(*) > 2;
+    
 
 -- Exiba o nome dos cursos e suas mensalidades, ordenando primeiro pela mensalidade (decrescente).
 
